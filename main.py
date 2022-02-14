@@ -16,7 +16,6 @@ from selenium.webdriver.support.relative_locator import locate_with
 
 USER = config.USER
 PASS = config.PASS
-print(PASS)
 pyautogui.FAILSAFE = True
 
 def getWebDriver():
@@ -37,10 +36,6 @@ def signIn(driver, username, password):
     notificationsButton = driver.find_element(By.ID, 'rejectDesktopNotifications')
     time.sleep(1)
     notificationsButton.click()
-
-# def createTextMessage(text, timeRemaining):
-#     textToSend = "Time Remaining: " + timeRemaining + " | " + text
-#     sms.sendMessage(textToSend)
 
 def checkHelpdesk(driver, previousCount, timeRemaining):
     helpDeskSpan = driver.find_element(By.XPATH,'//span[text()="Helpdesk"]')
